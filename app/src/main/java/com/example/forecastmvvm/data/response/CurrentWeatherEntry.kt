@@ -1,4 +1,4 @@
-package com.example.forecastmvvm.data
+package com.example.forecastmvvm.data.response
 
 
 import com.google.gson.annotations.SerializedName
@@ -9,7 +9,7 @@ data class CurrentWeatherEntry(
     val humidity: Int,
     @SerializedName("observation_time")
     val observationTime: String,
-    val precip: Int,
+    val precip: Double,
     val pressure: Int,
     val temperature: Int,
     @SerializedName("uv_index")
@@ -26,5 +26,7 @@ data class CurrentWeatherEntry(
     @SerializedName("wind_dir")
     val windDir: String,
     @SerializedName("wind_speed")
-    val windSpeed: Int
+    val windSpeed: Int,
+    @SerializedName("is_day")
+    val isDay: String
 )
