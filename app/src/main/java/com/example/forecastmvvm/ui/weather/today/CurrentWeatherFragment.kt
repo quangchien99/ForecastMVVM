@@ -8,30 +8,30 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.forecastmvvm.R
 import com.example.forecastmvvm.data.APIWeatherService
-import kotlinx.android.synthetic.main.today_weather_fragment.*
+import kotlinx.android.synthetic.main.current_weather_fragment.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class TodayWeatherFragment : Fragment() {
+class CurrentWeatherFragment : Fragment() {
 
     companion object {
         fun newInstance() =
-            TodayWeatherFragment()
+            CurrentWeatherFragment()
     }
 
-    private lateinit var viewModel: TodayWeatherViewModel
+    private lateinit var viewModel: CurrentWeatherViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.today_weather_fragment, container, false)
+        return inflater.inflate(R.layout.current_weather_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(TodayWeatherViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(CurrentWeatherViewModel::class.java)
         // TODO: Use the ViewModel
         val apiService = APIWeatherService()
         GlobalScope.launch(Dispatchers.Main) {

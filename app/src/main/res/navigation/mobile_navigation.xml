@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/todayWeatherFragment"
-        android:name="com.example.forecastmvvm.ui.weather.today.TodayWeatherFragment"
+        android:name="com.example.forecastmvvm.ui.weather.today.CurrentWeatherFragment"
         android:label="today_weather_fragment"
-        tools:layout="@layout/today_weather_fragment" />
+        tools:layout="@layout/current_weather_fragment" />
     <fragment
         android:id="@+id/futureWeatherFragment"
         android:name="com.example.forecastmvvm.ui.weather.future.list.FutureWeatherFragment"
