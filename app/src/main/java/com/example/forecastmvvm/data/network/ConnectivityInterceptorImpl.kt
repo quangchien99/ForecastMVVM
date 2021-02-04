@@ -2,15 +2,15 @@ package com.example.forecastmvvm.data.network
 
 import android.content.Context
 import android.net.ConnectivityManager
-import com.example.forecastmvvm.data.internal.NoConectivityException
+import com.example.forecastmvvm.data.internal.NoConnectivityException
 import okhttp3.Interceptor
 import okhttp3.Response
 
-class ConectivityInterceptorImpl(context: Context) : ConnectivityInterceptor {
+class ConnectivityInterceptorImpl(context: Context) : ConnectivityInterceptor {
     private val appContext = context.applicationContext
     override fun intercept(chain: Interceptor.Chain): Response {
         if (!isOnline()) {
-            throw NoConectivityException()
+            throw NoConnectivityException()
         }
         return chain.proceed(chain.request())
     }
